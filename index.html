@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/main.css" rel="stylesheet">
+    <title>GNSS卫星轨道信息计算</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="sidebar">
+            <button id="read_file" type="button">打开RINEX文件</button>
+            <input type="file" id="file_loader" style="display:none">
+            <select name="satellite_select" id="satellite_select_box" disabled>
+                <option value="" selected>请选择卫星</option>
+            </select>
+            <table id="data">
+                <tr>
+                    <th>gM</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>sqrtA</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>deltaN</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>toe</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>m0</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>eccentricity</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>smallOmega</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>iDot</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>i0</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>cUc</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>cUs</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>cRc</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>cRs</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>cIc</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>cIs</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>bigOmega</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>bigOmegaDot</th>
+                    <td>等待数据输入</td>
+                </tr>
+                <tr>
+                    <th>smallOmegaE</th>
+                    <td>等待数据输入</td>
+                </tr>
+            </table>
+            <div id="loading_indicator">
+                <p>基础资源加载中...<br>目前的可视化体验可能降级<br>总共需要约30秒</p>
+            </div>
+        </div>
+        <div id="navbar">
+            <div id="left_nav_container">
+                <form id="select_method_form">
+                    <div>
+                        <input type="radio" id="3d_radio" name="select_method" checked>
+                        <label for="3d_radio">天球坐标系三维可视化</label>
+                        <input type="radio" id="earth_radio" name="select_method">
+                        <label for="earth_radio">真地球坐标系（二维XY坐标）</label>
+                        <input type="radio" id="earth_3d_radio" name="select_method">
+                        <label for="earth_3d_radio">地球坐标系三维可视化</label>
+                        <input type="radio" id="sky_radio" name="select_method">
+                        <label for="sky_radio">真天球坐标系（二维XY坐标）</label>
+                    </div>
+                </form>
+            </div>
+            <div id="right_nav_container">
+                <button id="manual_stepping" type="button" disabled>手动步进</button>
+                <button id="start_auto_stepping" type="button" disabled>自动步进</button>
+                <button id="stop_auto_stepping" type="button" disabled>停止步进</button>
+            </div>
+        </div>
+        <div id="render_field"></div>
+    </div>
+    <script type="text/javascript">
+        window.onerror = function () {
+            alert("您的浏览器版本过低，脚本执行错误。\n请更新浏览器后再次访问。");
+            document.getElementById("loading_indicator").innerHTML = "您的浏览器版本过低，无法正常执行脚本。<br>建议使用最新版浏览器！";
+            document.getElementById("loading_indicator").style["color"] = "red";
+        };
+    </script>
+
+    <script src="./scripts/third-party/three.js" type="module"></script>
+    <script src="./scripts/third-party/OrbitControls.js" type="module"></script>
+    <script src="./scripts/algorithms.js" type="module"></script>
+    <script src="./scripts/third-party/FontLoader.js" type="module"></script>
+    <script src="./scripts/third-party/OrbitControls.js" type="module"></script>
+    <script src="./scripts/third-party/TextGeometry.js" type="module"></script>
+    <script src="./scripts/render.js" type="module"></script>
+</body>
+
+</html>

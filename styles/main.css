@@ -1,0 +1,193 @@
+html,
+body {
+  height: 100vh;
+  min-width: 33cm;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/*页面总体布局*/
+#wrapper {
+  display: grid;
+  grid-template-columns: 7cm auto;
+  grid-auto-rows: minmax(0, auto);
+  grid-gap: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#sidebar {
+  width: 7cm;
+  height: 100vh;
+  grid-column: 1;
+  grid-row: 1/3;
+  background-color: #ffffff;
+  border-right: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  min-width: calc(26cm - 1px);
+  width: calc(100vw - 7cm - 1px);
+  height: 1.5cm;
+  grid-column: 2;
+  grid-row: 1;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dbdbdb;
+  margin: 0;
+  padding: 0;
+}
+
+#render_field {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    #ccc 10px,
+    #ccc 20px
+  );
+  grid-column: 2;
+  grid-row: 2;
+  min-width: calc(26cm - 1px);
+  width: calc(100vw - 7cm - 1px);
+  height: calc(100vh - 1.5cm - 1px);
+  margin: 0;
+  padding: 0;
+}
+
+/*侧边栏布局*/
+#read_file {
+  width: 70%;
+  height: 1cm;
+  display: block;
+  margin: 0.25cm auto;
+  background-color: #ffffff;
+  border: 3px solid black;
+  color: black;
+  font-size: 0.43cm;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#read_file:active {
+  width: 70%;
+  height: 1cm;
+  display: block;
+  margin: 0.25cm auto;
+  background-color: black;
+  border: 3px solid black;
+  color: #ffffff;
+  font-size: 0.43cm;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#read_file:disabled {
+  width: 70%;
+  height: 1cm;
+  display: block;
+  margin: 0.25cm auto;
+  background-color: #dbdbdb;
+  border: 3px solid #dbdbdb;
+  color: #ffffff;
+  font-size: 0.43cm;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#data {
+  width: 80%;
+  margin: 0.5cm auto;
+  text-align: center;
+  border-spacing: 0;
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#data th,
+td {
+  padding: 0;
+  border-top: 1px solid #dbdbdb;
+}
+
+#data th {
+  border-right: 1px solid #dbdbdb;
+}
+
+#satellite_select_box {
+  margin: 0.5cm auto;
+  display: block;
+  width: 70%;
+}
+
+#loading_indicator {
+  color: red;
+  margin: 0.25cm auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*导航栏布局*/
+#left_nav_container {
+  margin: 0 auto 0 0.25cm;
+  float: left;
+  width: 11.5cm;
+}
+
+#right_nav_container {
+  margin: 0 0.25cm 0 auto;
+  float: right;
+}
+
+#stop_auto_stepping,
+#start_auto_stepping,
+#manual_stepping {
+  width: 3cm;
+  height: 1cm;
+  margin: 0.25cm auto;
+  background-color: #ffffff;
+  border: 3px solid black;
+  color: black;
+  font-size: 0.43cm;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#stop_auto_stepping:active,
+#start_auto_stepping:active,
+#manual_stepping:active {
+  width: 3cm;
+  height: 1cm;
+  margin: 0.25cm auto;
+  background-color: black;
+  border: 3px solid black;
+  color: #ffffff;
+  font-size: 0.43cm;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#stop_auto_stepping:disabled,
+#start_auto_stepping:disabled,
+#manual_stepping:disabled {
+  width: 3cm;
+  height: 1cm;
+  margin: 0.25cm auto;
+  background-color: #dbdbdb;
+  border: 3px solid #dbdbdb;
+  color: #ffffff;
+  font-size: 0.43cm;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#select_method_form {
+  margin: 0.18cm auto auto;
+}
